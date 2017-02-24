@@ -9,7 +9,8 @@ A docker image with the necessary tools to build [my website](https://paternault
 - The following tools are available:
   - [LaTeX](https://packages.debian.org/stable/texlive-full) (and a lot of LaTeX packages and fonts);
   - [IkiWiki](https://packages.debian.org/stable/ikiwiki);
-  - [CA certificates](https://packages.debian.org/stretch/ca-certificates).
+  - [CA certificates](https://packages.debian.org/stretch/ca-certificates);
+  - some PDF/image manipulation programs ([poppler-utils](https://packages.debian.org/stretch/poppler-utils) and [imagemagick](https://packages.debian.org/stretch/imagemagick)).
 
 ## Usage
 
