@@ -6,6 +6,7 @@ FROM paternal/cours
 RUN \
   apt-get --yes update \
   && apt-get install --yes \
+    ca-cacert \
     ikiwiki \
     libsort-naturally-perl \
     libstring-formatter-perl \
