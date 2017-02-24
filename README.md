@@ -5,6 +5,8 @@ A docker image with the necessary tools to build [my website](https://paternault
 
 ## Available tools
 
+*Note: This list may not be up-to-date. The [Dockerfile](https://hub.docker.com/r/paternal/ababsurdo/~/dockerfile/) will give you a more precise list.*
+
 - It is based on a [debian stable](https://www.debian.org/releases/stable/).
 - The following tools are available:
   - [LaTeX](https://packages.debian.org/stable/texlive-full) (and a lot of LaTeX packages and fonts);
