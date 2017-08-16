@@ -1,6 +1,4 @@
-# TODO Make it depends on:
-# FROM svlentink/texlive-full
-FROM paternal/cours
+FROM svlentink/texlive-full
 LABEL maintainer "Louis Paternault <spalax+docker@gresille.org>"
 
 ARG DEBIAN_FRONTEND=noninteractive
