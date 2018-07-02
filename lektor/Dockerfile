@@ -3,14 +3,17 @@ LABEL maintainer "Louis Paternault <spalax+docker@gresille.org>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN \ # Install Debian packages
-  apt-get --yes update \
-  && apt-get install --yes \
+  apt --yes update \
+  && apt install --yes \
     imagemagick \
     libffi-dev \
     libssl-dev \
     python3 \
     python3-dev \
-  && apt-get clean
+    python3-pip \
+  && apt clean
+RUN \ # Install pdfautonup
+  pip3 install pdfautonup
 RUN \ # Install Lektor
   curl -sf https://www.getlektor.com/install.sh | sh
 RUN \ # Check that everything is installed

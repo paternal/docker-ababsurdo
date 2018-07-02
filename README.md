@@ -14,6 +14,10 @@ A docker image with the necessary tools to build [my website](https://paternault
   - [CA certificates](https://packages.debian.org/stretch/ca-certificates);
   - some PDF/image manipulation programs ([poppler-utils](https://packages.debian.org/stretch/poppler-utils) and [imagemagick](https://packages.debian.org/stretch/imagemagick)).
 
+## Tag `lektor`
+
+This tag installs LaTeX, [lektor](http://getlektor.com), and [pdfautonup](http://pypi.org/p/pdfautonup). Some day, it will replace the default `latest` tag.
+
 ## Usage
 
     sudo docker pull paternal/ababsurdo
