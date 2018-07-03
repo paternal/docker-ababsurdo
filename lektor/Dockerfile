@@ -6,6 +6,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN \
   apt --yes update \
   && apt install --yes \
+    git \
     imagemagick \
     libffi-dev \
     libssl-dev \
@@ -21,10 +22,17 @@ RUN \
     pdfautonup \
     lektor
 
+# Install my custom LaTeX classes
+RUN git clone https://framagit.org/lpaternault/pablo.git /usr/share/pablo
+ENV TEXINPUTS :/usr/share/pablo
+
 # Set the locale
-RUN locale-gen C.UTF-8
-ENV LC_ALL=C.UTF-8
-ENV LANG=C.UTF-8
+RUN locale-gen \
+    C.UTF-8 \
+    fr_FR.UTF-8
+ENV LANGUAGE fr_FR.UTF-8
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
 
 # Check that everything is installed
 RUN \
