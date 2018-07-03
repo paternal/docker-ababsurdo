@@ -14,6 +14,7 @@ RUN \
     python3 \
     python3-dev \
     python3-pip \
+    wget \
   && apt clean
 
 # Install python packages
@@ -25,6 +26,16 @@ RUN \
 # Install my custom LaTeX classes
 RUN git clone https://framagit.org/lpaternault/pablo.git /usr/share/pablo
 ENV TEXINPUTS :/usr/share/pablo
+
+# Install pixelart (will be useless, since pixelart is included in texlive-full in debian sid)
+RUN \
+  cd /tmp \
+  && wget http://mirrors.ctan.org/graphics/pixelart.zip \
+  && unzip pixelart.zip \
+  && cd pixelart \
+  && latex pixelart.ins \
+  && cp pixelart.sty /usr/share/pablo
+
 
 # Set the locale
 RUN locale-gen \
