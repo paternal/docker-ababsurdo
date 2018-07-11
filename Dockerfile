@@ -25,19 +25,24 @@ RUN pip3 install \
 RUN pip3 uninstall --yes pyOpenSSL
 RUN pip3 install pyOpenSSL
 
-# Install my custom LaTeX classes
-RUN git clone https://framagit.org/lpaternault/pablo.git /usr/share/pablo
-ENV TEXINPUTS :/usr/share/pablo
-
-# Install pixelart (will be useless, since pixelart is included in texlive-full in debian sid)
-RUN \
-  cd /tmp \
+# Install pixelart and graph35 (will be useless, since pixelart and graph35 are included in texlive-full in debian sid)
+RUN cd /tmp \
   && wget http://mirrors.ctan.org/graphics/pixelart.zip \
   && unzip pixelart.zip \
   && cd pixelart \
   && latex pixelart.ins \
-  && cp pixelart.sty /usr/share/pablo
+  && mv pixelart.sty /usr/share/texlive/texmf-dist/tex/latex/
+RUN cd /tmp \
+  && wget http://mirrors.ctan.org/graphics/graph35.zip \
+  && unzip graph35.zip \
+  && cd graph35 \
+  && latex graph35.ins \
+  && mv graph35.sty /usr/share/texlive/texmf-dist/tex/latex/
 
+# Install my custom LaTeX classes
+RUN git clone https://framagit.org/lpaternault/pablo.git /usr/share/pablo
+RUN mv /usr/share/pablo/*sty /usr/share/texlive/texmf-dist/tex/latex/
+RUN texhash
 
 # Set the locale
 RUN locale-gen \
