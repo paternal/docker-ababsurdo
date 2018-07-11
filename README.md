@@ -1,7 +1,7 @@
 paternal/ababsurdo
 ==================
 
-A docker image with the necessary tools to build [my website](https://paternault.fr) ([source](https://framagit.org/lpaternault/ababsurdo)). I would be surprised if this image was useful to anyone but me, but who knows?
+A docker image with the necessary tools to build [my website](https://ababsurdo.fr) ([source](https://framagit.org/lpaternault/ababsurdo)). I would be surprised if this image was useful to anyone but me, but who knows?
 
 ## Available tools
 
@@ -10,13 +10,9 @@ A docker image with the necessary tools to build [my website](https://paternault
 - It is based on a [debian stable](https://www.debian.org/releases/stable/).
 - The following tools are available:
   - [LaTeX](https://packages.debian.org/stable/texlive-full) (and a lot of LaTeX packages and fonts);
-  - [IkiWiki](https://packages.debian.org/stable/ikiwiki);
+  - [lektor](https://getlektor.com)
   - [CA certificates](https://packages.debian.org/stretch/ca-certificates);
   - some PDF/image manipulation programs ([poppler-utils](https://packages.debian.org/stretch/poppler-utils) and [imagemagick](https://packages.debian.org/stretch/imagemagick)).
-
-## Tag `lektor`
-
-This tag installs LaTeX, [lektor](http://getlektor.com), and [pdfautonup](http://pypi.org/p/pdfautonup). Some day, it will replace the default `latest` tag.
 
 ## Usage
 
