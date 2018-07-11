@@ -37,7 +37,7 @@ RUN cd /tmp \
   && unzip graph35.zip \
   && cd graph35 \
   && latex graph35.ins \
-  && mv graph35.sty /usr/share/texlive/texmf-dist/tex/latex/
+  && mv *.sty /usr/share/texlive/texmf-dist/tex/latex/
 
 # Install my custom LaTeX classes
 RUN git clone https://framagit.org/lpaternault/pablo.git /usr/share/pablo
