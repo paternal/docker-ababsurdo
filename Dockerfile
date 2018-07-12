@@ -7,14 +7,15 @@ RUN \
   apt --yes update \
   && apt install --yes \
     git \
+    graphviz \
     imagemagick \
     libffi-dev \
     libssl-dev \
     locales \
+    poppler-utils \
     python3 \
     python3-dev \
     python3-pip \
-    poppler-utils \
     wget \
   && apt clean
 
