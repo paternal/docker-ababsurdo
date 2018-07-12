@@ -19,11 +19,10 @@ RUN \
 
 # Install python packages
 RUN pip3 install \
-    pdfautonup \
-    lektor
-# Wrong version of pyOpenSSL is installed
-RUN pip3 uninstall --yes pyOpenSSL
-RUN pip3 install pyOpenSSL
+    pdfautonup
+
+# Install lektor
+RUN curl -sf https://www.getlektor.com/install.sh | sh
 
 # Install pixelart and graph35 (will be useless, since pixelart and graph35 are included in texlive-full in debian sid)
 RUN cd /tmp \
