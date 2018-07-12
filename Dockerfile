@@ -6,6 +6,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN \
   apt --yes update \
   && apt install --yes \
+    curl \
     git \
     imagemagick \
     libffi-dev \
