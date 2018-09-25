@@ -12,6 +12,7 @@ RUN \
     libffi-dev \
     libssl-dev \
     locales \
+    pdf2svg \
     poppler-utils \
     python3 \
     python3-dev \

@@ -15,7 +15,7 @@ A docker image with the necessary tools to build [my website](https://ababsurdo.
   - [LaTeX](https://packages.debian.org/stable/texlive-full) (and a lot of LaTeX packages and fonts);
   - [lektor](https://getlektor.com)
   - [CA certificates](https://packages.debian.org/stretch/ca-certificates);
-  - some PDF/image manipulation programs ([poppler-utils](https://packages.debian.org/stretch/poppler-utils) and [imagemagick](https://packages.debian.org/stretch/imagemagick)).
+  - some PDF/image manipulation programs ([poppler-utils](https://packages.debian.org/stretch/poppler-utils), [imagemagick](https://packages.debian.org/stretch/imagemagick), [pdf2svg](https://packages.debian.org/stretch/pdf2svg), etc.).
 
 ## Usage
 
