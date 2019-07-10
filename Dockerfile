@@ -1,4 +1,4 @@
-FROM svlentink/texlive-full
+FROM svlentink/texlive-with-libraries
 LABEL maintainer "Louis Paternault <spalax+docker@gresille.org>"
 
 # Install Debian packages
@@ -9,6 +9,7 @@ RUN \
     git \
     graphviz \
     imagemagick \
+    lektor \
     libffi-dev \
     libssl-dev \
     locales \
@@ -22,25 +23,7 @@ RUN \
 
 # Install python packages
 RUN pip3 install \
-    pdfautonup \
-    lektor
-# Wrong version of pyOpenSSL is installed
-RUN pip3 uninstall --yes pyOpenSSL
-RUN pip3 install pyOpenSSL
-
-# Install pixelart and graph35 (will be useless, since pixelart and graph35 are included in texlive-full in debian sid)
-RUN cd /tmp \
-  && wget http://mirrors.ctan.org/graphics/pixelart.zip \
-  && unzip pixelart.zip \
-  && cd pixelart \
-  && latex pixelart.ins \
-  && mv pixelart.sty /usr/share/texlive/texmf-dist/tex/latex/
-RUN cd /tmp \
-  && wget http://mirrors.ctan.org/graphics/graph35.zip \
-  && unzip graph35.zip \
-  && cd graph35 \
-  && latex graph35.ins \
-  && mv *.sty /usr/share/texlive/texmf-dist/tex/latex/
+    pdfautonup
 
 # Install my custom LaTeX classes
 RUN git clone https://framagit.org/lpaternault/pablo.git /usr/share/pablo
