@@ -31,7 +31,7 @@ RUN mv /usr/share/pablo/*sty /usr/share/texlive/texmf-dist/tex/latex/
 RUN texhash
 
 # Set the locale
-RUN echo "fr_FR.UTF-8" >> /etc/locale.gen
+RUN echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen
 RUN locale-gen
 ENV LANG fr_FR.UTF-8
 ENV LANGUAGE fr_FR.UTF-8
