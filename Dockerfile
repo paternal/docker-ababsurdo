@@ -31,12 +31,12 @@ RUN mv /usr/share/pablo/*sty /usr/share/texlive/texmf-dist/tex/latex/
 RUN texhash
 
 # Set the locale
-RUN locale-gen \
-    C.UTF-8 \
-    fr_FR.UTF-8
+RUN echo "fr_FR.UTF-8" >> /etc/locale.gen
+RUN locale-gen
+ENV LANG fr_FR.UTF-8
 ENV LANGUAGE fr_FR.UTF-8
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
+ENV LC_ALL fr_FR.UTF-8
+RUN dpkg-reconfigure locales
 
 # Check that everything is installed
 RUN \
