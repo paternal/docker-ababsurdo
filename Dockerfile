@@ -22,8 +22,9 @@ RUN \
   && apt clean
 
 # Install python packages
-RUN pip3 install \
-    pdfautonup
+RUN python3 -m pip install \
+    pdfautonup \
+    spix
 
 # Install my custom LaTeX classes
 RUN git clone https://framagit.org/lpaternault/pablo.git /usr/share/pablo
