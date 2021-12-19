@@ -9,7 +9,6 @@ RUN \
     git \
     graphviz \
     imagemagick \
-    lektor \
     libffi-dev \
     libssl-dev \
     locales \
@@ -23,12 +22,13 @@ RUN \
 
 # Install python packages
 RUN python3 -m pip install \
+    lektor \
     pdfautonup \
     spix
 
 # Install my custom LaTeX classes
-RUN git clone https://framagit.org/lpaternault/pablo.git /usr/share/pablo
-RUN mv /usr/share/pablo/*sty /usr/share/texlive/texmf-dist/tex/latex/
+RUN git config --global http.sslverify false # Can be removed when bumping to the next Debian version
+RUN git clone https://framagit.org/lpaternault/pablo.git /usr/share/texlive/texmf-dist/tex/latex/pablo
 RUN texhash
 
 # Set the locale
