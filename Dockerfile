@@ -6,7 +6,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN \
   apt --yes update \
   && apt install --yes --no-install-recommends \
-    bash \
     bzip2 \
     git \
     graphviz \
