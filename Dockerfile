@@ -1,35 +1,35 @@
-FROM svlentink/texlive-with-libraries
-LABEL maintainer "Louis Paternault <spalax+docker@gresille.org>"
+FROM texlive/texlive
+LABEL maintainer "Louis Paternault <spalax@gresille.org>"
 
 # Install Debian packages
 ARG DEBIAN_FRONTEND=noninteractive
 RUN \
   apt --yes update \
-  && apt install --yes \
+  && apt install --yes --no-install-recommends \
     git \
     graphviz \
+    bzip2 \
     imagemagick \
-    libffi-dev \
-    libssl-dev \
     locales \
-    pdf2svg \
+    libreoffice \
     poppler-utils \
-    python3 \
-    python3-dev \
+    xz-utils \
     python3-pip \
-    wget \
   && apt clean
+
+# Allow Imagemagick to convert PDF to PNG
+RUN sed -i \
+    's/policy *domain="coder" *rights="none" *pattern="PDF"/policy domain="coder" rights="read|write" pattern="PDF"/' \
+    /etc/ImageMagick-6/policy.xml
 
 # Install python packages
 RUN python3 -m pip install \
     lektor \
-    pdfautonup \
-    spix
+    pdfautonup
 
 # Install my custom LaTeX classes
-RUN git config --global http.sslverify false # Can be removed when bumping to the next Debian version
-RUN git clone https://framagit.org/lpaternault/pablo.git /usr/share/texlive/texmf-dist/tex/latex/pablo
-RUN texhash
+RUN git clone https://framagit.org/lpaternault/pablo.git /usr/share/pablo/texmf-dist/tex/latex/pablo
+RUN tlmgr conf auxtrees add /usr/share/pablo/texmf-dist
 
 # Set the locale
 RUN echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen
