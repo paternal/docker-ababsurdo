@@ -6,15 +6,16 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN \
   apt --yes update \
   && apt install --yes --no-install-recommends \
+    bash \
+    bzip2 \
     git \
     graphviz \
-    bzip2 \
     imagemagick \
-    locales \
     libreoffice \
+    locales \
     poppler-utils \
-    xz-utils \
     python3-pip \
+    xz-utils \
   && apt clean
 
 # Allow Imagemagick to convert PDF to PNG
