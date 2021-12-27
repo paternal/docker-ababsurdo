@@ -10,6 +10,7 @@ RUN \
     git \
     graphviz \
     imagemagick \
+    inkscape \
     libreoffice \
     locales \
     poppler-utils \

@@ -9,6 +9,7 @@ RUN \
     git \
     graphviz \
     imagemagick \
+    inkscape \
     libffi-dev \
     libssl-dev \
     locales \
