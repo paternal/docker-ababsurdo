@@ -1,4 +1,4 @@
-FROM svlentink/texlive-with-libraries
+FROM paternal/cours
 LABEL maintainer "Louis Paternault <spalax+docker@gresille.org>"
 
 # Install Debian packages
@@ -12,6 +12,7 @@ RUN \
     inkscape \
     libffi-dev \
     libssl-dev \
+    libreoffice \
     locales \
     pdf2svg \
     poppler-utils \
@@ -26,12 +27,6 @@ RUN python3 -m pip install \
     lektor \
     pdfautonup \
     spix
-
-# Install my custom LaTeX classes
-RUN git config --global http.sslverify false # Can be removed when bumping to the next Debian version
-RUN ln -s /usr/share/texlive /usr/share/pablo
-RUN git clone https://framagit.org/lpaternault/pablo.git /usr/share/pablo/texmf-dist/tex/latex/pablo
-RUN texhash
 
 # Set the locale
 RUN echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen
