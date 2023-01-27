@@ -26,6 +26,7 @@ RUN \
 RUN python3 -m pip install \
     lektor \
     pdfautonup \
+    pdfimpose \
     spix
 
 # Set the locale
