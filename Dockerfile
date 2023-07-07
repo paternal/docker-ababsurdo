@@ -23,7 +23,7 @@ RUN \
   && apt clean
 
 # Install python packages
-RUN python3 -m pip install \
+RUN python3 -m pip install --break-system-packages \
     lektor \
     pdfautonup \
     pdfimpose \
