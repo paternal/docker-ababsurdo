@@ -4,7 +4,7 @@ paternal/ababsurdo
 ![Docker Stars](https://img.shields.io/docker/stars/paternal/ababsurdo.svg)
 ![Docker Pulls](https://img.shields.io/docker/pulls/paternal/ababsurdo.svg)
 
-A docker image with the necessary tools to build [my website](https://ababsurdo.fr) ([source](https://framagit.org/lpaternault/ababsurdo)). I would be surprised if this image was useful to anyone but me, but who knows?
+A docker image with the necessary tools to build [my website](https://ababsurdo.fr) ([source](https://forge.apps.education.fr/paternaultlouis/ababsurdo)). I would be surprised if this image was useful to anyone but me, but who knows?
 
 ## Available tools
 
